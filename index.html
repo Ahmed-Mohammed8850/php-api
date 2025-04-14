@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+   const getProducts = async function(number){
+    try {
+        const data = await fetch(`http://localhost/eCommerce/cart/cart.php`)
+        const res = await data.json()
+        return res
+    } catch (error) {
+        console.error("Fetch error:", error);
+    }
+}
+
+getProducts(5).then(res => console.log("cart:", res))
+
+    </script>
+</body>
+</html>
